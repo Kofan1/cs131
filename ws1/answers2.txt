@@ -1,0 +1,17 @@
+B1: grep '"city":"Santa Barbara"' /data/yelp/yelp_academic_dataset_business.json
+B2: grep -c '"state":"CA"' /data/yelp/yelp_academic_dataset_business.json
+B3: grep -i '"text":.*worth' /data/yelp/yelp_academic_dataset_review.json 
+B4: gerp -E "Coffee|Café|Cafe" /data/yelp/yelp_academic_dataset_business.json
+B5: grep -E "\"stars\":(4\.5|5\.0)" /data/yelp/yelp_academic_dataset_business.json
+B6: grep -E '"stars"[[:space:]]*:[[:space:]]*5[[:space:]]*' /data/yelp/yelp_academic_dataset_review.json
+B7: grep -E '"text":".*[[:alnum:]_]+@[[:alnum:]_.]+\.[A-Za-z]{2,}' /data/yelp/yelp_academic_dataset_review.json
+B8: grep -E '[0-9]{3}-[0-9]{3}-[0-9]{4}' /data/yelp/yelp_academic_dataset_review.json
+B9: grep -E '"name":"P' /data/yelp/yelp_academic_dataset_business.json
+B10: grep -ci "pizza" /data/yelp/yelp_academic_dataset_review.json
+B11: grep -in "service" /data/yelp/yelp_academic_dataset_review.json
+B12: grep -vi "Restaurants" /data/yelp/yelp_academic_dataset_business.json
+B13: First, search California's businesses. Second, search the review_count fields. Third, only keep number. Fourth, sort numerically descending. Fifth, print head 3 line.
+B14: grep '"city":"Santa Barbara"' /data/yelp/yelp_academic_dataset_business.json \
+| grep -oE '"name":"[^"]+"' \
+| sed 's/"name":"//; s/"$//' \
+| sort
