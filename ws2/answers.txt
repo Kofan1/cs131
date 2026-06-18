@@ -1,0 +1,34 @@
+Q1: echo "task: practice git" >> notes.md
+git add notes.md
+git commit -m "ws2: add task line"
+Q2: git log --oneline -3
+Q3: 5ad7c60
+Q4: git revert 5ad7c60
+grep "WRONG" notes.md
+Q5: git rm --cached bigdata.bin
+echo "bigdata.bin" >> .gitignore
+git add .gitignore
+git commit --amend
+git push
+rm bigdata.bin
+Q6: git switch -c feature-summary
+Q7: vim summary.md
+git add summary.md
+git commit -m "add summary.md"
+Q8: git diff main
+Q9: git switch main
+git merge feature-summary
+Q10: git branch -d feature-summary
+ls summary.md
+option d delete a merged branch 
+Q11: git merge conflict-branch 
+the conflicted file is ws2/summary.md
+Q12: git diff
+Q13: vim summary.md
+Q14: git add summary.md
+git commit -m "Git pre-fills a merge message"
+git log --oneline
+Q15: git fetch origin
+git log HEAD..origin/main --oneline
+shows nothing, it means no incoming commits from remote
+Q16: Git fetch downloads remote changes without merging, while git pull is fetch + merge  
